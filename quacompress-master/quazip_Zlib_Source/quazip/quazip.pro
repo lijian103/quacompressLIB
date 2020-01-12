@@ -79,9 +79,11 @@ win32 {
     QMAKE_PKGCONFIG_DESTDIR = ../lib/pkgconfig
     # workaround for qdatetime.h macro bug
     DEFINES += NOMINMAX
+
 #    INCLUDEPATH += ../zlib/include
 #    LIBS += -L ../zlib/lib -lz
 
+#    include(./3rdparty/zlib.pri)
 
 #    win32:CONFIG(debug, debug|release): LIBS += -LD:/NavigationDependencies/lib/Debug/zlib/ -lzlibstaticd
 #    else:win32:CONFIG(release, debug|release): LIBS += -LD:/NavigationDependencies/lib/Release/zlib/ -lzlibstatic
