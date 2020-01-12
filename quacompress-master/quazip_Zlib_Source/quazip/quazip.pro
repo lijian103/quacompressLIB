@@ -32,7 +32,7 @@ QMAKE_PKGCONFIG_REQUIRES = Qt5Core
 
 # This one handles dllimport/dllexport directives.
 DEFINES += QUAZIP_BUILD
-DEFINES+=QT_NO_CAST_FROM_ASCII
+#DEFINES+=QT_NO_CAST_FROM_ASCII
 DEFINES+=QT_NO_CAST_TO_ASCII
 # You'll need to define this one manually if using a build system other
 # than qmake or using QuaZIP sources directly in your project.
@@ -79,14 +79,18 @@ win32 {
     QMAKE_PKGCONFIG_DESTDIR = ../lib/pkgconfig
     # workaround for qdatetime.h macro bug
     DEFINES += NOMINMAX
-#    include(./3rdparty/zlib.pri)
+#    INCLUDEPATH += ../zlib/include
+#    LIBS += -L ../zlib/lib -lz
 
-    win32:CONFIG(debug, debug|release): LIBS += -LD:/NavigationDependencies/lib/Debug/zlib/ -lzlibstaticd
-    else:win32:CONFIG(release, debug|release): LIBS += -LD:/NavigationDependencies/lib/Release/zlib/ -lzlibstatic
-    INCLUDEPATH += D:/NavigationDependencies/include/zlib-1.2.11
-    DEPENDPATH += D:/NavigationDependencies/include/zlib-1.2.11
+
+#    win32:CONFIG(debug, debug|release): LIBS += -LD:/NavigationDependencies/lib/Debug/zlib/ -lzlibstaticd
+#    else:win32:CONFIG(release, debug|release): LIBS += -LD:/NavigationDependencies/lib/Release/zlib/ -lzlibstatic
+#    INCLUDEPATH += D:/NavigationDependencies/include/zlib-1.2.11
+#    DEPENDPATH += D:/NavigationDependencies/include/zlib-1.2.11
 
 }
+
+include(./3rdparty/zlib.pri)
 
 
 symbian {

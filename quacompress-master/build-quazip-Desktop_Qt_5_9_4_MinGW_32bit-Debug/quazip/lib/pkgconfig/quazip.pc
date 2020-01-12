@@ -1,0 +1,12 @@
+prefix=D:/Qt/Qt5.9.4/5.9.4/mingw53_32
+exec_prefix=${prefix}
+libdir=/bin/
+includedir=${prefix}/include
+
+
+Name: Quazip
+Description: Quazip Library
+Libs: -L${libdir} -lquazip 
+Cflags: -I${includedir}
+Requires: Qt5Core
+

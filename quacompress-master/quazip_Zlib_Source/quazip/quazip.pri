@@ -19,8 +19,6 @@ HEADERS += \
         $$PWD/zip.h\
         $$PWD/mjlcompress.h
 
-INCLUDEPATH += $$PWD
-
 SOURCES += $$PWD/qioapi.cpp \
            $$PWD/JlCompress.cpp \
            $$PWD/quaadler32.cpp \
