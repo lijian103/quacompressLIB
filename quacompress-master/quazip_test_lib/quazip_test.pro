@@ -5,41 +5,41 @@ CONFIG -= app_bundle
 
 #打开下面可以编译库
 ###########produce lib#############
-#TARGET = quacompress
-#TEMPLATE = lib
-#CONFIG += staticlib
-#CONFIG(debug, debug|release) {
-#     mac: TARGET = $$join(TARGET,,,_debug)
-#     win32: TARGET = $$join(TARGET,,,d)
-#}
-#win32 {
-#    headers.path=$$PREFIX/include/quazip
-#    headers.files=$$HEADERS
-#    INSTALLS += headers target
-#    CONFIG(staticlib){
-#        target.path=$$PREFIX/lib
-#        QMAKE_PKGCONFIG_LIBDIR = $$PREFIX/lib/
-#    } else {
-#        target.path=$$PREFIX/bin
-#        QMAKE_PKGCONFIG_LIBDIR = $$PREFIX/bin/
-#    }
+TARGET = quacompress
+TEMPLATE = lib
+CONFIG += staticlib
+CONFIG(debug, debug|release) {
+     mac: TARGET = $$join(TARGET,,,_debug)
+     win32: TARGET = $$join(TARGET,,,d)
+}
+win32 {
+    headers.path=$$PREFIX/include/quazip
+    headers.files=$$HEADERS
+    INSTALLS += headers target
+    CONFIG(staticlib){
+        target.path=$$PREFIX/lib
+        QMAKE_PKGCONFIG_LIBDIR = $$PREFIX/lib/
+    } else {
+        target.path=$$PREFIX/bin
+        QMAKE_PKGCONFIG_LIBDIR = $$PREFIX/bin/
+    }
 
-#    ## odd, this path seems to be relative to the
-#    ## target.path, so if we install the .dll into
-#    ## the 'bin' dir, the .pc will go there as well,
-#    ## unless have hack the needed path...
-#    ## TODO any nicer solution?
-#    QMAKE_PKGCONFIG_DESTDIR = ../lib/pkgconfig
-#    # workaround for qdatetime.h macro bug
-#    DEFINES += NOMINMAX
-##    include(./3rdparty/zlib.pri)
+    ## odd, this path seems to be relative to the
+    ## target.path, so if we install the .dll into
+    ## the 'bin' dir, the .pc will go there as well,
+    ## unless have hack the needed path...
+    ## TODO any nicer solution?
+    QMAKE_PKGCONFIG_DESTDIR = ../lib/pkgconfig
+    # workaround for qdatetime.h macro bug
+    DEFINES += NOMINMAX
+#    include(./3rdparty/zlib.pri)
 
-#    win32:CONFIG(debug, debug|release): LIBS += -LD:/NavigationDependencies/lib/Debug/zlib/ -lzlibstaticd
-#    else:win32:CONFIG(release, debug|release): LIBS += -LD:/NavigationDependencies/lib/Release/zlib/ -lzlibstatic
-#    INCLUDEPATH += D:/NavigationDependencies/include/zlib-1.2.11
-#    DEPENDPATH += D:/NavigationDependencies/include/zlib-1.2.11
+    win32:CONFIG(debug, debug|release): LIBS += -LD:/NavigationDependencies/lib/Debug/zlib/ -lzlibstaticd
+    else:win32:CONFIG(release, debug|release): LIBS += -LD:/NavigationDependencies/lib/Release/zlib/ -lzlibstatic
+    INCLUDEPATH += D:/NavigationDependencies/include/zlib-1.2.11
+    DEPENDPATH += D:/NavigationDependencies/include/zlib-1.2.11
 
-#}
+}
 #####################
 
 # The following define makes your compiler emit warnings if you use
@@ -55,11 +55,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 DEFINES += QUAZIP_STATIC
 
-#win32:CONFIG(debug, debug|release): LIBS += -LD:/NavigationDependencies/lib/Debug/zlib/ -lzlibstaticd
-#else:win32:CONFIG(release, debug|release): LIBS += -LD:/NavigationDependencies/lib/Release/zlib/ -lzlibstatic
-#INCLUDEPATH += D:/NavigationDependencies/include/zlib-1.2.11
-#DEPENDPATH += D:/NavigationDependencies/include/zlib-1.2.11
-include(./quacompress/3rdparty/zlib.pri)
+win32:CONFIG(debug, debug|release): LIBS += -LD:/NavigationDependencies/lib/Debug/zlib/ -lzlibstaticd
+else:win32:CONFIG(release, debug|release): LIBS += -LD:/NavigationDependencies/lib/Release/zlib/ -lzlibstatic
+INCLUDEPATH += D:/NavigationDependencies/include/zlib-1.2.11
+DEPENDPATH += D:/NavigationDependencies/include/zlib-1.2.11
+#include(./quacompress/3rdparty/zlib.pri)
 
 
 
@@ -102,6 +102,6 @@ SOURCES += $$PWD/quacompress/src/qioapi.cpp \
 #           $$PWD/quacompress/moc/moc_quaziodevice.cpp\
 #           $$PWD/quacompress/moc/moc_quazipfile.cpp
 
-SOURCES += \
-        main.cpp \
+#SOURCES += \
+#        main.cpp \
 
