@@ -1,0 +1,1 @@
+添加了zlib源码在quazip中，可以直接编译出debug和release版本的库

@@ -1,0 +1,4 @@
+QMAKE_PRL_BUILD_DIR = C:/Users/tommy/Desktop/quacompress-master/quacompress-master/build-quazip-Desktop_Qt_5_9_8_MSVC2015_32bit-Debug/quazip
+QMAKE_PRO_INPUT = quazip.pro
+QMAKE_PRL_TARGET = quazipd.lib
+QMAKE_PRL_CONFIG = lex yacc debug exceptions depend_includepath testcase_targets import_plugins import_qpa_plugin file_copies qmake_use qt warn_on link_prl flat debug_and_release debug_and_release_target precompile_header autogen_precompile_source embed_manifest_dll embed_manifest_exe shared no_plugin_manifest win32 msvc copy_dir_files debug DebugBuild Debug build_pass c++11 debug qml_debug debug DebugBuild Debug build_pass qt warn_on create_prl no_install_prl create_pc c++11 console debug DebugBuild Debug build_pass have_target dll no_plist exclusive_builds debug_info no_autoqmake thread moc resources
